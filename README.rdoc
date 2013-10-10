@@ -1,28 +1,11 @@
-== README
+== mineAussieSurfLife
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+New social network for Aussie surfer.
 
-Things you may want to cover:
+What will can you do?
+* Add your profile with your quiver
+* Add and post on FB/Twitter your surf session
+* Add new spot
+* Training plan
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Let me work and you will see...
