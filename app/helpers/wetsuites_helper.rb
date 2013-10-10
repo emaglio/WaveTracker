@@ -1,0 +1,2 @@
+module WetsuitesHelper
+end

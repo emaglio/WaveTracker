@@ -1,0 +1,17 @@
+<%= form_for(@surfer) do |f| %>
+  <% if @surfer.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@surfer.errors.count, "error") %> prohibited this surfer from being saved:</h2>
+
+      <ul>
+      <% @surfer.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
