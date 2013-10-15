@@ -1,8 +1,8 @@
 class User < ActiveRecord::Base
-  attr_accessor :myname, :surname, :birth_date, :location, :gender, :email, :password
-  
+  attr_accessor :myname, :surname, :birth_date, :location, :gender, :email, :password, :image
+  validates :myname, :presence => true
   validates :email, :presence => true
-  validates :password, :presence => true, :includes => { :in => 0..9, :lenght => {:minimum => 3, :maximum => 15}}
+  validates :password, :presence => true
   
   def initilize(options = {})
     @myname = options[:myname]
@@ -12,6 +12,7 @@ class User < ActiveRecord::Base
     @gender = options[:gender]
     @email = options[:email]
     @password = options[:password]
+	@image = options[:image]
   end
   
 end

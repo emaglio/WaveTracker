@@ -1,17 +1,33 @@
 <%= form_for(@user) do |f| %>
-  <% if @user.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+		<%= f.label :name %>
+		<%= f.text_field :myname%> <br />
+		<%= f.label :Surname %>
+		<%= f.text_field :surname%> <br />
+		<%= f.label :"Birth Date"%>
+ 		<%= f.date_field :birth_date%> <br />
+		<%= f.label :"Location(City, State)"%>
+ 		<%= f.text_field :location%> <br />
+		<%= f.label :Gender%>
+ 		<%= f.select :gender, ["Male", "Female", "I don't know yet"]%> <br />
+		<%= f.label :Email%>
+ 		<%= f.email_field :email%> <br />
+		<%= f.label :Password%>
+ 		<%= f.password_field :password%> <br />
+		
+	<% if @user.errors.any? %>
+		<div id="error_explanation">
+		<h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
 
-      <ul>
-      <% @user.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+		<ul>
+		<% @user.errors.full_messages.each do |msg| %>
+			<li><%= msg %></li>
+		<% end %>
+		</ul>
+		</div>
+	<% end %>
 
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  	<div class="actions">
+	<%= f.submit %>
+	</div>
+
 <% end %>

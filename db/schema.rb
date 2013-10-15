@@ -29,6 +29,13 @@ ActiveRecord::Schema.define(version: 20131010224856) do
   end
 
   create_table "users", force: true do |t|
+    t.string   "myname"
+    t.string   "surname"
+    t.string   "birthdate"
+    t.string   "location"
+    t.string   "gender"
+    t.string   "email"
+    t.string   "password"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
