@@ -1,4 +1,27 @@
 <p id="notice"><%= notice %></p>
+<h2>Surfer <%= @surfer.nickname%> details</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nick Name</th>
+	  <th>Home Spot</th>
+	  <th>Goofy Or Regular</th>
+	  <th>Style</th>
+	  <th>Best Trick</th>
+    </tr>
+  </thead>
+
+  <tbody>
+      <tr>
+		<td><%= @surfer.nickname %></td>
+		<td><%= @surfer.home_spot %></td>
+		<td><%= @surfer.goofy_regular %></td>
+		<td><%= @surfer.style %></td>
+		<td><%= @surfer.best_trick %></td>
+      </tr>
+  </tbody>
+</table>
 
 <%= link_to 'Edit', edit_surfer_path(@surfer) %> |
-<%= link_to 'Back', surfers_path %>
+<%= link_to 'Surfer List', surfers_path %>

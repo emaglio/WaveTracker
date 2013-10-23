@@ -3,8 +3,8 @@
 <table>
   <thead>
     <tr>
-      <th></th>
-      <th></th>
+      <th>Nick Name</th>
+      <th>Home Spot</th>
       <th></th>
     </tr>
   </thead>
@@ -12,6 +12,8 @@
   <tbody>
     <% @surfers.each do |surfer| %>
       <tr>
+		<td><%= surfer.nickname %></td>
+		<td><%= surfer.home_spot %></td>
         <td><%= link_to 'Show', surfer %></td>
         <td><%= link_to 'Edit', edit_surfer_path(surfer) %></td>
         <td><%= link_to 'Destroy', surfer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -19,6 +21,10 @@
     <% end %>
   </tbody>
 </table>
+
+	<% if @surfers.empty?%>
+		<em> No surfers found </em>
+	<% end %>
 
 <br>
 

@@ -1,0 +1,27 @@
+Base structure:
+class User:
+	Name, Surname, birth_date, location, gender, email, password
+
+class Surfer:
+	nickname, home_spot, goofy_regular, style, best_trick
+	
+class board:
+	brand, shaper, size, type, fins
+
+class wetsuite:
+	brand, thickness, type
+	
+class spot:
+	name, location, spot_type, wave_direction, bottom_type, level, frequency, best_swell, best_wind, best_tide, season, surfers, hazards
+
+One User can have only one surfer and more than one board and wetsuite.
+The surfer can have only one home_spot.
+
+What will can you do?
+* Add your profile with your quiver
+* Add and post on FB/Twitter your surf session
+* Add new spot
+* Training plan
+
+In the future you can choose between surfer and trainer as a user. So the trainer can create
+give to the surfer the training program....let's see	

@@ -1,5 +1,15 @@
 <%= form_for(@surfer) do |f| %>
-  <% if @surfer.errors.any? %>
+	<%= f.label :"Nick Name" %>
+	<%= f.text_field :nickname%> <br />
+	<%= f.label :"Home Spot" %>
+	<%= f.text_field :home_spot%> <br />
+	<%= f.label :"Goofy or Regular"%>
+ 	<%= f.select :goofy_regular, ["Goofy", "Regular"]%> <br />
+	<%= f.label :"Style"%>
+ 	<%= f.select :style, ["ClassicShortBoarder", "NewSchoolHighPerformance", "LongBoarder", "OldStyler", "BodyBoarder"]%> <br />
+	<%= f.label :"Best trick"%>
+	<%= f.select :best_trick, ["Barrel", "Cutback", "Floaters", "Roundhouse", "Carving 360","Snap", "Frontside Air", "Backside Air", "Re-entry", "Layback Snap", "Carving", "Bottom Turn", "Air Reverse", "Backside Air Reverse"]%> <br />
+  	<% if @surfer.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@surfer.errors.count, "error") %> prohibited this surfer from being saved:</h2>
 
@@ -9,9 +19,9 @@
       <% end %>
       </ul>
     </div>
-  <% end %>
+  	<% end %>
 
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  	<div class="actions">
+    	 <%= f.submit %>
+  	</div>
 <% end %>

@@ -24,6 +24,11 @@ ActiveRecord::Schema.define(version: 20131010224856) do
   end
 
   create_table "surfers", force: true do |t|
+    t.string   "nickname"
+    t.string   "home_spot"
+    t.string   "goofy_regular"
+    t.string   "style"
+    t.string   "best_trick"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -31,7 +36,7 @@ ActiveRecord::Schema.define(version: 20131010224856) do
   create_table "users", force: true do |t|
     t.string   "myname"
     t.string   "surname"
-    t.string   "birthdate"
+    t.string   "birth_date"
     t.string   "location"
     t.string   "gender"
     t.string   "email"

@@ -69,6 +69,6 @@ class SurfersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def surfer_params
-      params[:surfer]
+      params.require(:surfer).permit(:nickname, :home_spot, :goofy_regular, :style, :best_trick)
     end
 end
