@@ -1,4 +1,6 @@
 MineAussieSurfLife::Application.routes.draw do
+  resources :welcomes
+
   resources :wetsuites
 
   resources :spots
@@ -9,7 +11,7 @@ MineAussieSurfLife::Application.routes.draw do
 
   resources :users
   
-  root 'users#index'
+  root 'welcomes#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

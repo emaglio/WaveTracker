@@ -1,0 +1,3 @@
+23/10
+ - Fixed problem: "User and Surfer are not deleted with the button"	
+ - Add and Check the dependences between User(has_one :surfer) and Surfer (belongs_to :user)

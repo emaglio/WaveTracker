@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
   validates :surname, :birth_date, :presence => false
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, :presence => true, format: {with: VALID_EMAIL_REGEX}
-  validates :password, :presence => true, :inclusion => 0..99
+  validates :password, :presence => true
   
   # def encrypt_password
 	# if password.present?
