@@ -16,7 +16,7 @@
 		<td><%= surfer.home_spot %></td>
         <td><%= link_to 'Show', surfer %></td>
         <td><%= link_to 'Edit', edit_surfer_path(surfer) %></td>
-        <td><%= link_to 'Destroy', surfer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Delete', surfer_path(surfer), :method => :delete, :class => "surfer", :confirm => "Are you sure ?"%>
       </tr>
     <% end %>
   </tbody>
