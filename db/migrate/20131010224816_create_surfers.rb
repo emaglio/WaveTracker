@@ -8,6 +8,5 @@ class CreateSurfers < ActiveRecord::Migration
 		t.string :best_trick
 		t.timestamps
     end
-	# add_index :surfers, :user_id
   end
 end

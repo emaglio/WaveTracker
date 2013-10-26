@@ -3,7 +3,6 @@ class User < ActiveRecord::Base
   # before_save :encrypt_password
   # after_save :clear_password
   
-  attr_accessor :password
   validates :myname, :presence => true, :length => {:in => 3..20}
   validates :location, :gender, :presence => true
   validates :surname, :birth_date, :presence => false
