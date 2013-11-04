@@ -71,7 +71,7 @@ class SurfersController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_surfer
-      # @surfer = Surfer.find(params[:id])
+      @surfer = Surfer.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
