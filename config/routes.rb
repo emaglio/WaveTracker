@@ -7,9 +7,9 @@ MineAussieSurfLife::Application.routes.draw do
 
   resources :boards
 
-  resources :surfers
-
   resources :users
+  
+  resources :surfers
   
   root 'welcomes#index'
 

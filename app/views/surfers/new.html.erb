@@ -1,5 +1,5 @@
-<h1>New surfer</h1>
+<h1>Add Surfer details </h1>
 
-<%= render 'form' %>
+<%= render partial: "form", locals: {user: @user} %>
 
-<%= link_to 'Back', surfers_path %>
+<%= link_to 'Back', user_surfers_path(@user) %>

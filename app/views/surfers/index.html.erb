@@ -1,5 +1,9 @@
 <h1>Listing surfers</h1>
 
+<% if @user.surfer == nil %>
+   <em> Surfer details are not inserted yet.... </em>
+   <%= link_to 'Add Surfer', new_user_surfer_path(@user) %> 
+<% else %>
 <table>
   <thead>
     <tr>
@@ -10,23 +14,16 @@
   </thead>
 
   <tbody>
-    <% @surfers.each do |surfer| %>
-      <tr>
-		<td><%= surfer.nickname %></td>
-		<td><%= surfer.home_spot %></td>
-        <td><%= link_to 'Show', surfer %></td>
-        <td><%= link_to 'Edit', edit_surfer_path(surfer) %></td>
-        <td><%= link_to 'Delete', surfer_path(surfer), :method => :delete, :class => "surfer", :confirm => "Are you sure ?"%>
+      <tr>	  	
+		<td><%= @user.surfer.nickname %></td>
+		<td><%= @user.surfer.home_spot %></td>
+        <td><%= link_to 'Edit Surfer', edit_user_surfer_path(@user) %></td>
+        <td><%= link_to 'Delete', [@user, surfer], :method => :delete, :class => "surfer", :confirm => "Are you sure ?"%>
       </tr>
-    <% end %>
   </tbody>
 </table>
-
-	<% if @surfers.empty?%>
-		<em> No surfers found </em>
-	<% end %>
-
-<br>
-
-<%= link_to 'New Surfer', new_surfer_path %> ||
 <%= link_to 'Users List', users_path %>
+<% end %>
+
+
+

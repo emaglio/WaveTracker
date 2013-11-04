@@ -1,26 +1,22 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
-  before_action :user_params, only: :create
+  respond_to :js, :html
+  before_action :create_new_form, only: [:new, :create]
+  before_action :create_edit_form, only: [:edit, :update]
+  # before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   # GET /users
   # GET /users.json
   def index
     @users = User.all
-		respond_to do |format|
-		format.html
-		format.json {render json: @users}
-		end
   end
 
   # GET /users/1
   # GET /users/1.json
   def show
-	@user = User.find(set_user)
   end
 
   # GET /users/new
   def new
-    @user = User.new(params[:user])
   end
 
   # GET /users/1/edit
@@ -29,44 +25,51 @@ class UsersController < ApplicationController
 
   # POST /users
   # POST /users.json
-  def create
-    @user = User.create(user_params)
-    respond_to do |format|
-      if @user.save
-        format.html { redirect_to @user, notice: 'User was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @user }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
-      end
-    end
-  end
+	def create
+		workflow = Workflows::UserWorkflow.new(@form, params[:user])
+		workflow.process do |user|
+			return respond_with user
+		end
+		render :new
+	end
 
   # PATCH/PUT /users/1
   # PATCH/PUT /users/1.json
-  def update
-    respond_to do |format|
-      if @user.update(user_params)
-        format.html { redirect_to @user, notice: 'User was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: 'edit' }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
-      end
-    end
-  end
+	def update
+		workflow = Workflows::UserWorkflow.new(@form, user_params)
+		workflow.process do |user|
+			return respond_with user
+		end
+		render :edit
+	end
 
-  # DELETE /users/1
-  # DELETE /users/1.json
-  def destroy
-    @user.delete
-    respond_to do |format|
-      format.html { redirect_to users_path }
-      format.json { head :no_content }
-    end
-  end
+	# DELETE /users/1
+	# DELETE /users/1.json
+	def destroy
+		@user.delete
+	end
 
-  private
+
+	private
+	def user
+		@user ||= User.find(params[:id])
+	end
+	helper_method :user
+	
+	def surfer
+		user.surfer
+	end	
+	helper_method :surfer
+	
+	def create_new_form
+		@form = Forms::UserForm.new(user: User.new, surfer: Surfer.new)
+	end
+	
+	def create_edit_form
+		@form = Forms::UserForm.new(user: user, surfer: user.surfer)
+	end
+	
+	
     # Use callbacks to share common setup or constraints between actions.
     def set_user
       @user = User.find(params[:id])

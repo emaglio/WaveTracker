@@ -1,4 +1,4 @@
-<%= form_for(@surfer) do |f| %>
+<%= form_for([@user, @surfer]) do |f| %>
 	
 	<%= f.label :"Nick Name" %>
 	<%= f.text_field :nickname%> <br />
