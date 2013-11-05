@@ -9,7 +9,8 @@ module Service
 		
 		def create #when other User type will be created, this part must be changed
 			user = User.new(user_params)
-			surfer = user.build_surfer(surfer_params)
+			surfer = Surfer.new(surfer_params)
+			surfer.user = user
 			ActiveRecord::Base.transaction do
 				user.save!
 				surfer.save!
