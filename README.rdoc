@@ -1,4 +1,4 @@
-== mineAussieSurfLife
+== WaveTraker
 
 New social network for Aussie surfer.
 
