@@ -1,6 +1,13 @@
 /*******************
 ----Primary---------
 *******************/
+body { 
+     background-image: url('../images/bd.jpg');
+     background-repeat:no-repeat;
+     background-position:top;
+     overflow:scroll;
+}
+     
         /*******************
         ----Slider---------
         *******************/
@@ -45,7 +52,7 @@
          }
                      
         /*******************
-        ----Map---------
+        --------Map---------
         *******************/
         
         #map {   
@@ -160,83 +167,3 @@
         box-shadow: 10px 10px 10px #373737;
         
         }
-/*******************
-----Footers---------
-*******************/
-#footer{
-margin-top:40px;
-}
-        
-        #footer h2{
-        color:white;
-        font-size:33px;
-        font-family:'Myriad Pro';
-        margin-bottom:0px;
-        margin-top:35px;
-        }
-        
-        #footer h3{
-        color:white;
-        font-size:12px;
-        font-family:'Open Sans';
-        font-style:italic;
-        }
-        
-        #footer p{
-        color:white;
-        font-size:12px;
-        font-family:'Open Sans';
-        }
-        
-        #facebook{
-        color:white;
-        margin-top:5px;
-        font-size:12px;
-        font-family:'Open Sans';
-        }
-        
-        #facebook li{
-        font-size:10px;
-        font-family:'Open Sans';
-        }
-/*******************
-----Bottom Bar------
-*******************/
-#bottomBar{
-margin-top:25px;
-height:40px;
-width:1590px;
-background:#004bff;
-background-position:center;
-}
-         
-         #bottomBar li{
-         margin-top:10px;
-         font-size:12px;
-         font-family:'Open Sans';
-         }
-         
-         #bottomNav{
-         margin-top:10px;
-         font-size:12px;
-         font-family:'Open Sans';
-         }
-         
-         #bottomNav a{
-         margin-left:12px;
-         }
-         
-         #bottomNav a:hover{
-            background: #EFB04F;
-			text-decoration: none;
-			-webkit-border-radius: 3px;
-			-moz-border-radius: 3px;
-			border-radius: 3px;	
-			border: 1px solid #FCCC85;
-			margin-right: -2px;
-			text-shadow: 0 1px 0 #281f1b;	
-			-webkit-transition: background .5s;
-			-moz-transition: background .5s;
-			-o-transition: background .5s;
-			transition: background .5s;
-          }             

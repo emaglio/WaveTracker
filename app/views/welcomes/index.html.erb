@@ -1,7 +1,95 @@
-<h1>Mine Aussie Surf Life</h1>
-<h2> Welcome in the new social network for Aussie Surfer</h2>
-
-<p><%= link_to 'Users list', users_path %></p>
-<p><%= link_to 'New User', new_user_path %></p>
-<br>
-
+<div id="primary" class="container_24">
+	  	   <div id="slider">
+		   		<ul>
+		   			<h2> Stunning Web Designs </h2>
+					<h2> You Will Love it </h2>
+					<p> We work around the clock </p>
+					<button> <%= link_to 'JOIN US', new_user_path %> </button>
+				</ul> 		
+		   </div>
+		   
+		   <div id="map">
+		   		<section>
+					<ul>	 
+		   				<h2> Browse x surf spots </h2>
+						<li><p> Find new spots, save them as favorites and get notification about the best conditions </p></li>
+					</ul>
+				</section>
+				<img src="images/icons/map.png" alt="Map">
+				<section class="grid_8 prefix_8">
+						<button> BROWSE NOW </button>
+				</section>
+			</div>
+			
+			<div id="menu" class="container_24">
+		   		<section>
+					<ul>	 
+					<li id="profile" class="grid_6 alpha">
+						<img src="images/icons/profile.png" alt="ProfLogo">
+		   				<h4> Create Your Profile </h4>
+						<p> Lets throw a trackie dacks also it'll be gutta. You little ripper avos flamin lets throw a lizard drinking. 
+							Gutful of jug where as busy as a big smoke. Grab us a billy as cunning as a bull bar. 
+							As cunning as a bonzer flamin as stands out like cubby house. dramas as cunning as a barrack >> </p>
+					</li>
+					<li class="grid_6">
+						<img src="images/icons/community.png" alt="ComLogo">
+		   				<h4> Enter The Community </h4>
+						<p> Lets throw a trackie dacks also it'll be gutta. You little ripper avos flamin lets throw a lizard drinking. 
+							Gutful of jug where as busy as a big smoke. Grab us a billy as cunning as a bull bar. 
+							As cunning as a bonzer flamin as stands out like cubby house. dramas as cunning as a barrack >> </p>
+					</li>
+					<li class="grid_6">
+						<img src="images/icons/gps.png" alt="Gps">
+		   				<h4> Find Unknown Spots </h4>
+						<p> Lets throw a trackie dacks also it'll be gutta. You little ripper avos flamin lets throw a lizard drinking. 
+							Gutful of jug where as busy as a big smoke. Grab us a billy as cunning as a bull bar. 
+							As cunning as a bonzer flamin as stands out like cubby house. dramas as cunning as a barrack >> </p>
+					</li>
+					<li id="cloud" class="grid_6 omega">
+						<img src="images/icons/cloud.png" alt="Cloud">
+		   				<h4> Check Forecasts </h4>
+						<p> Lets throw a trackie dacks also it'll be gutta. You little ripper avos flamin lets throw a lizard drinking. 
+							Gutful of jug where as busy as a big smoke. Grab us a billy as cunning as a bull bar. 
+							As cunning as a bonzer flamin as stands out like cubby house. dramas as cunning as a barrack >> </p>
+					</li>
+					</ul>
+				</section>
+			</div>
+			
+			<div class="container_24">
+				<nav id="arrow">
+						<img src="images/icons/arrow.png" class="arrowProfile">
+						<img src="images/icons/arrow.png" class="arrowCom">
+						<img src="images/icons/arrow.png" class="arrowSpot">
+					    <img src="images/icons/arrow.png" class="arrowForecast">
+				</nav>
+				<section id="example">
+					<ul>
+		   	   		<li class="grid_6 alpha">
+			   	   		<a href="#">
+				   	  	   <img src="images/profile.jpg" class="profile">
+				   		</a>
+			   		</li>
+					<li class="grid_6">
+			   	   		<a href="#">
+				   	  	   <img src="images/community.jpg" class="comImg">
+				   		</a>
+			   		</li>
+					<li class="grid_6">
+			   	   		<a href="#">
+				   	  	   <img src="images/spot.jpg" class="spot">
+				   		</a>
+			   		</li>
+					<li class="grid_6 omega">
+			   	   		<a href="#">
+				   	  	   <img src="images/forecast.jpg" class="forecast">
+				   		</a>
+			   		</li>
+					</ul> 
+				</section>
+		   </div> 
+	  </div>
+  	  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+      <script src="js/scripts.min.js"></script>
+	  
+	  <%= stylesheet_link_tag "welcome" %>

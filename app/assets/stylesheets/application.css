@@ -11,3 +11,12 @@
  *= require_self
  *= require_tree .
  */
+header, headermenu, primary, map, menu, 
+example, footer, nav, {
+display: block;
+}
+
+#lastSection {clear:both; }
+#menu {clear:both; }
+#slider {clear:both; }
+#bottomBar {clear:both; }

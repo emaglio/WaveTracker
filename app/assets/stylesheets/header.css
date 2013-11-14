@@ -1,0 +1,87 @@
+/*******************
+----HEADER---------
+*******************/
+
+header { 
+     background-image:url('../images/header.jpg');
+     background-repeat:no-repeat;
+     background-position:center;
+     background-position:top; 
+     overflow:hidden;
+}
+
+    /*******************
+    ----NAVIGATOR-------
+    *******************/
+	header nav {
+        margin-left:255px;   
+		overflow: hidden;
+		height: 76px;
+        margin-top:28px;
+	}
+    
+    header nav li {
+        float:left;
+        font-size:15px;
+        text-align:center;
+    }
+    
+    header nav section li {
+        float:left;
+        font-size:15px;
+        text-align:center;
+        text-decoration:underline;
+    }
+    
+    header nav section li p{
+        font-size:15px;
+        margin-left:5px;
+        margin-right:5px;
+        text-decoration:none    
+    }
+    
+    header nav li .home { 
+           margin-left:10px;
+           position:relative;
+    }
+    
+    header nav li .aboutUs { 
+           margin-left:60px;
+           position:relative;
+    }
+    
+    header nav li .surfSpot { 
+           margin-left:50px;
+           position:relative;
+    }
+    
+    header nav li .blog { 
+           margin-left:50px;
+           position:relative;       
+    }
+    
+    header nav li .contactUs { 
+           margin-left:50px;
+           position:relative;
+    }
+    
+    header nav li .login { 
+           margin-left:50px;
+           position:relative;       
+    }
+    
+    header nav a:hover{
+			background: #EFB04F;
+			text-decoration: none;
+			-webkit-border-radius: 3px;
+			-moz-border-radius: 3px;
+			border-radius: 3px;	
+			border: 1px solid #FCCC85;
+			margin-right: -2px;
+			text-shadow: 0 1px 0 #281f1b;	
+			-webkit-transition: background .5s;
+			-moz-transition: background .5s;
+			-o-transition: background .5s;
+			transition: background .5s;
+            	
+	}

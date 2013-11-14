@@ -1,3 +1,163 @@
+/***************
+-----HTML5------
+394264 for home image
+***************/
+header, headermenu, primary, map, menu, 
+example, footer, nav, {
+display: block;
+}
+
+#lastSection {clear:both; }
+#menu {clear:both; }
+#slider {clear:both; }
+#bottomBar {clear:both; }
+               
+/*******************
+----GENERAL---------
+*******************/
+body { 
+     background:white url(../imgs/bd.jpg);
+     background-repeat:no-repeat;
+     background-position:top;
+     overflow:hidden;
+     position:fixed off;
+}
+
+a {
+  text-decoration: none;
+  color:white;
+}
+
+p {
+    color:white;
+    font-size: 11px;
+	line-height: 20px;
+	font-size: Verdana, helvetica, arial, sans-serif;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	font-family: myriad-pro, helvetica, arial, sans-serif;
+	font-weight: normal;
+}
+
+h2 {
+	color: #394264;
+	font-size: 38px;
+	line-height: 24px;
+	font-family: 'PT Sans';
+}
+
+ul {
+	overflow: hidden;
+}
+
+li {
+	margin-left: 0;
+	list-style: none;
+}
+
+.rounded {
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;	
+}
+
+
+.container_24 {
+	padding-left: 5px;
+	padding-right: 5px;
+	position: relative;
+    position:fixed off;
+}
+
+/*******************
+----HEADER---------
+*******************/
+
+header { 
+     background:white url(../images/header.jpg);
+     background-repeat:no-repeat;
+     background-position:center;
+     background-position:top; 
+     overflow:hidden;
+}
+
+    /*******************
+    ----NAVIGATOR-------
+    *******************/
+	header nav {
+        margin-left:244px;   
+		overflow: hidden;
+		height: 76px;
+        margin-top:28px;
+	}
+    
+    header nav li {
+        float:left;
+        font-size:15px;
+        text-align:center;
+    }
+    
+    header nav section li {
+        float:left;
+        font-size:15px;
+        text-align:center;
+        text-decoration:underline;
+    }
+    
+    header nav section li p{
+        font-size:15px;
+        margin-left:5px;
+        margin-right:5px;
+        text-decoration:none    
+    }
+    
+    header nav li .home { 
+           margin-left:10px;
+           position:relative;
+    }
+    
+    header nav li .aboutUs { 
+           margin-left:60px;
+           position:relative;
+    }
+    
+    header nav li .surfSpot { 
+           margin-left:50px;
+           position:relative;
+    }
+    
+    header nav li .blog { 
+           margin-left:50px;
+           position:relative;       
+    }
+    
+    header nav li .contactUs { 
+           margin-left:50px;
+           position:relative;
+    }
+    
+    header nav li .login { 
+           margin-left:50px;
+           position:relative;       
+    }
+    
+    header nav a:hover{
+			background: #EFB04F;
+			text-decoration: none;
+			-webkit-border-radius: 3px;
+			-moz-border-radius: 3px;
+			border-radius: 3px;	
+			border: 1px solid #FCCC85;
+			margin-right: -2px;
+			text-shadow: 0 1px 0 #281f1b;	
+			-webkit-transition: background .5s;
+			-moz-transition: background .5s;
+			-o-transition: background .5s;
+			transition: background .5s;
+            	
+	} 
+    
 /*******************
 ----Primary---------
 *******************/
