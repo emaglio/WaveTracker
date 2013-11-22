@@ -14,19 +14,21 @@ header {
     ----NAVIGATOR-------
     *******************/
 	header nav {
-        margin-left:255px;   
+        margin-left:225px;   
 		overflow: hidden;
 		height: 76px;
         margin-top:28px;
 	}
     
     header nav li {
+        margin-left:40px;
         float:left;
         font-size:15px;
         text-align:center;
     }
     
     header nav section li {
+        margin-left:10px;   
         float:left;
         font-size:15px;
         text-align:center;
@@ -46,27 +48,27 @@ header {
     }
     
     header nav li .aboutUs { 
-           margin-left:60px;
+           margin-left:10px;
            position:relative;
     }
     
     header nav li .surfSpot { 
-           margin-left:50px;
+           margin-left:10px;
            position:relative;
     }
     
     header nav li .blog { 
-           margin-left:50px;
+           margin-left:10px;
            position:relative;       
     }
     
     header nav li .contactUs { 
-           margin-left:50px;
+           margin-left:10px;
            position:relative;
     }
     
     header nav li .login { 
-           margin-left:50px;
+           margin-left:0px;
            position:relative;       
     }
     

@@ -18,6 +18,11 @@ gem 'coffee-rails', '~> 4.0.0'
 # Use Reform from Nick
 gem 'reform', '~> 0.2.1'
 
+# Rspec for testing
+group :development, :test do
+  gem 'rspec-rails', '~> 3.0.0.beta'
+end
+
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 

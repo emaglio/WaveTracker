@@ -53,6 +53,3 @@ function closebox()
    document.getElementById('box').style.display='none';
    document.getElementById('shadowing').style.display='none';
 }
-
-
-

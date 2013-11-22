@@ -1,62 +1,17 @@
 /*******************
-----Footers---------
-*******************/
-#footer{
-margin-top:40px;
-height:360px;
-width:1460px;
-background:#373737;
-overflow:hidden;
-}
-        
-        
-        #footer h2{
-        color:white;
-        font-size:33px;
-        font-family:'Myriad Pro';
-        margin-bottom:0px;
-        margin-top:35px;
-        }
-        
-        #footer h3{
-        color:white;
-        font-size:12px;
-        font-family:'Open Sans';
-        font-style:italic;
-        }
-        
-        #footer p{
-        color:white;
-        font-size:12px;
-        font-family:'Open Sans';
-        }
-        
-        #facebook{
-        color:white;
-        margin-top:5px;
-        font-size:12px;
-        font-family:'Open Sans';
-        }
-        
-        #facebook li{
-        font-size:10px;
-        font-family:'Open Sans';
-        }
-/*******************
 ----Bottom Bar------
 *******************/
 #bottomBar{
 height:40px;
-width:1460px;
 background:#004bff;
 background-position:centre;
 overflow:hidden;
 }
          
          #bottomBar p{
-         alignment-adjust:middle;
+         alignment-adjust:centre;
+         margin-left:70px;
          float:left;
-         margin-left:0px;
          margin-top:10px;
          font-size:12px;
          font-family:'Open Sans';
