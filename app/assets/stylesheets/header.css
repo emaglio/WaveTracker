@@ -35,13 +35,6 @@ header {
         text-decoration:underline;
     }
     
-    header nav section li p{
-        font-size:15px;
-        margin-left:5px;
-        margin-right:5px;
-        text-decoration:none    
-    }
-    
     header nav li .home { 
            margin-left:10px;
            position:relative;
@@ -67,7 +60,7 @@ header {
            position:relative;
     }
     
-    header nav li .login { 
+    #login{ 
            margin-left:0px;
            position:relative;       
     }
@@ -79,11 +72,10 @@ header {
 			-moz-border-radius: 3px;
 			border-radius: 3px;	
 			border: 1px solid #FCCC85;
-			margin-right: -2px;
+			margin-right: 0px;
 			text-shadow: 0 1px 0 #281f1b;	
 			-webkit-transition: background .5s;
 			-moz-transition: background .5s;
 			-o-transition: background .5s;
-			transition: background .5s;
-            	
+			transition: background .5s;       	
 	}

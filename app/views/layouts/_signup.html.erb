@@ -1,0 +1,24 @@
+<%= stylesheet_link_tag "signup" %>
+<%= javascript_include_tag "lightbox-form" %>
+
+<div id="shadowing_signup"></div>
+<div id="box_signup">
+	 <form method="get">
+	 <li id="close" onClick="closebox('signup')"> <a href="#"> x </a> </li>
+	 <li id="title"> Create your account </li>
+	 <li id="email"><input type="text" name="email" placeholder="Email" ></li>
+	 <li id="password"><input type="password" name="password" placeholder="Password" ></li>
+	 <li id="password_confirm"><input type="password" name="password" placeholder="Confirm Password" ></li>
+	 <li id="agree"><input type="checkbox">I agree with the term of service</li>
+	 <li><button id="submit_signup"> <%= link_to 'Create an account', new_user_path%> </button></li>
+	 <li id="fb">
+ 	 <span id="fb_image"><img src="/images/icons/facebook.png"></span>
+	 <span id="fb_text"> <a href="#">Sign in with Facebook </a> <span>
+	 <li id="tw"> 
+	 <span id="tw_image"><img src="/images/icons/twitter.png"></span>
+	 <span id="tw_text"><a href="#">Sign in with Twitter </a> <span>
+	 </li>
+ </form>
+	 		 
+</div>
+</div>

@@ -1,5 +1,3 @@
-
-
 function gradient(id, level)
 {
 	var box = document.getElementById(id);
@@ -24,32 +22,38 @@ function fadein(id)
 
 
 // Open the lightbox
-
-
-function openbox(formtitle, fadin)
+function openbox(type)
 {
-  var box = document.getElementById('box'); 
-  document.getElementById('shadowing').style.display='block';
+    if (type == "login") {
+        var box = 'box_login';
+        var shadow = 'shadowing_login';
+    }
+    else {
+        var box = 'box_signup';
+        var shadow = 'shadowing_signup';
+    }
+    
+  document.getElementById(shadow).style.display = 'block';
+  gradient(box, 0);
+  fadein(box);
 
-  var btitle = document.getElementById('boxtitle');
-  btitle.innerHTML = formtitle;
-  
-  if(fadin)
-  {
-	 gradient("box", 0);
-	 fadein("box");
-  }
-  else
-  { 	
-    box.style.display='block';
-  }  	
+  formtype = "";
+ 
 }
 
 
 // Close the lightbox
-
-function closebox()
+function closebox(type)
 {
-   document.getElementById('box').style.display='none';
-   document.getElementById('shadowing').style.display='none';
+    if (type == "login") {
+        var box = 'box_login';
+        var shadow = 'shadowing_login';
+    }
+    else {
+        var box = 'box_signup';
+        var shadow = 'shadowing_signup';
+    }
+
+   document.getElementById(box).style.display='none';
+   document.getElementById(shadow).style.display='none';
 }

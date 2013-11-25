@@ -1,8 +1,16 @@
+<%= stylesheet_link_tag "header" %>
+<%= javascript_include_tag "lightbox-form" %>
+
 <header id="header" class="container_24">
 		<nav>
-		<div class="lightbox">
-			 <%= render :partial => 'layouts/login' %>	 	  					   
-		</div>
+		<span class="login">
+			 <%= render :partial => 'layouts/login' %> 	  					   
+		</span>
+		
+		<span class="signup">
+			 <%= render :partial => 'layouts/signup' %> 	  					   
+		</span>
+
 		
 			<li><a <%= link_to 'Home', welcomes_path %> </a></li>  
 			<li><a href="#" class="aboutUs">About Us</a></li>
@@ -10,13 +18,10 @@
 			<li><a href="#" class="blog">Blog</a></li>
 			<li><a href="#" class="contactUs">Contact Us</a></li>
 			<li>
-			<section class="login">
-		   			 <li><a href="#" onClick="openbox('Login', 1)">LOGIN</a></li>
+			<section id="login">
+		   			 <li><a href="#" onClick="openbox('login')"> LOGIN </a></li>
 			   	   	 <li><p> or </p></li>  
-		   	   	   	 <li><a <%= link_to 'SIGN UP', new_user_path %> </a></li>
+		   	   	   	 <li><a href="#" onClick="openbox('signup')"> SIGN UP </a></li>
 			</section>
 		</nav>	
 </header>
-		<%= stylesheet_link_tag "header" %>
-		<%= stylesheet_link_tag "lightbox" %>
-		<%= javascript_include_tag "lightbox-form" %>

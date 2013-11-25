@@ -1,15 +1,12 @@
 MineAussieSurfLife::Application.routes.draw do
-  resources :welcomes
-
-  resources :wetsuites
-
-  resources :spots
-
-  resources :boards
-
-  resources :users
-  
-  resources :surfers
+	resources :welcomes
+	resources :wetsuites
+	resources :spots
+	resources :boards
+	resources :users
+	match '/signup', to: 'users#new', via: 'get'
+	resources :surfers
+	resources :sessions, only: [:new, :create, :destroy]
   
   root 'welcomes#index'
 

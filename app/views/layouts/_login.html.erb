@@ -1,14 +1,17 @@
-<div id="shadowing"></div>
-<div id="box">
+<%= stylesheet_link_tag "login" %>
+<%= javascript_include_tag "lightbox-form" %>
+
+<div id="shadowing_login"></div>
+<div id="box_login">
 	 <span id="boxtitle"></span>
 	 <form method="get">
-	 <li id="close" onClick="closebox()"> <a href="#"> x </a> </li>
-	 <li id="email"><input type="text" name="email" placeholder="Email" ></li>
+	 <li id="close" onClick="closebox('login')"> <a href="#"> x </a> </li>
+	 <li id="email_login"><input type="text" name="email" placeholder="Email" ></li>
 	 <li id="password"><input type="password" name="password" placeholder="Password" ></li>
-	 <li id="remember"><input type="checkbox" name="vehicle" value="Car">Remember me</li>
+	 <li id="remember"><input type="checkbox">Remember me</li>
 	 <li id="forgot"><a href="#"> Forgot password </a> </li>
-	 <p id="confirm">
-	 <li><input type="submit" name="Login" value="Login"></li>	 
+	 <p id="confirm_login">
+	 <li><input id="submit_login" type="submit" name="Login" value="Login"></li>	 
 	 <li><p id="or">or</p></li>
 	 <p id="facebook"><a href="#"><img src="/images/icons/facebook.png"></a></p>
 	 <p id="twitter"><a href="#"><img src="/images/icons/twitter.png"></a></p>
@@ -18,5 +21,3 @@
 </div>
 </div>
 
-<%= stylesheet_link_tag "login" %>
-<%= javascript_include_tag "lightbox-form" %>
