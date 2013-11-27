@@ -1,6 +1,10 @@
-<h1>Editing <%= @user.myname %> user</h1>
-
-<%= render 'form' %>
+<h1>User details editing</h1>
+	
+    <% if @form.errors.any? %>
+        <%= render 'formwitherror' %>
+    <% else %>
+        <%= render 'form' %>
+    <% end %>
 
 <%= link_to 'Show', @user %> |
 <%= link_to 'Back', users_path %>

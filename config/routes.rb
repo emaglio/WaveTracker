@@ -8,7 +8,7 @@ MineAussieSurfLife::Application.routes.draw do
 	resources :surfers
 	resources :sessions, only: [:new, :create, :destroy]
   
-  root 'welcomes#index'
+	root 'welcomes#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   respond_to :js, :html
   before_action :create_new_form, only: [:new, :create]
   before_action :create_edit_form, only: [:edit, :update]
-  # before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   # GET /users
   # GET /users.json
@@ -27,16 +27,14 @@ class UsersController < ApplicationController
   # POST /users.json
 	def create
 		workflow = Workflows::UserWorkflow.new(@form, params[:user])
-		workflow.process do |user|
-			return respond_with user
-		end
-		render :new
+		workflow.process
+		render :edit
 	end
 
   # PATCH/PUT /users/1
   # PATCH/PUT /users/1.json
 	def update
-		workflow = Workflows::UserWorkflow.new(@form, user_params)
+		workflow = Workflows::UserWorkflow.new(@form, params[:user])
 		workflow.process do |user|
 			return respond_with user
 		end
@@ -48,8 +46,11 @@ class UsersController < ApplicationController
 	def destroy
 		@user.delete
 	end
-
-
+	
+	def user_to_form
+		@form.user=@user
+	end
+	
 	private
 	def user
 		@user ||= User.find(params[:id])
