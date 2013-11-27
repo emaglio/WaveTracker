@@ -10,6 +10,7 @@ module Forms
 		VALID_PASSWORD_REGEX = /(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])/
 		validates :email,	:presence => true,
 							format:	{with: VALID_EMAIL_REGEX}
+		validates_uniqueness_of :email
 		validates :password,	:password_confirm,	presence: true,
 													length: {in: 5..20, too_short: "must have at least 5 words",
 															too_long: "must have at most 20 words"},

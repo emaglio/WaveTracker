@@ -106,7 +106,7 @@ input[type=checkbox] {
     margin-top:10px;
 }
 
-#submit_login{
+.submit_login{
     margin-left:10px;           
     background:#EFB04F;
     text-align:center;
@@ -143,7 +143,7 @@ input[type=checkbox] {
     border:none;
 }
 
-#submit_login:hover{
+.submit_login:hover{
     -webkit-box-shadow: 0 0 2px #e1a30c;
     -moz-box-shadow: 0 0 5px #e1a30c;
     box-shadow: 0 0 2px #e1a30c;
