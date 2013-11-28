@@ -8,8 +8,8 @@ MineAussieSurfLife::Application.routes.draw do
 	resources :sessions, only: [:new, :create, :destroy]
   
 	match '/signup', 	to: 'users#new', 			via: 'get'
-	match '/login', 	to: 'sessions#new', 		via: 'get'
-	match '/logout', 	to: 'sessions#destroy',		via: 'delete'
+	match '/signin', 	to: 'sessions#new', 		via: 'get'
+	match '/signout', 	to: 'sessions#destroy',		via: 'delete'
 	
 	root 'welcomes#index'
 

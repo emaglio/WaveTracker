@@ -18,10 +18,14 @@
 			<li><a href="#" class="blog">Blog</a></li>
 			<li><a href="#" class="contactUs">Contact Us</a></li>
 			<li>
+            <% if signed_in? %>
+                <li id="signout"><%= link_to "SIGN OUT", signout_path, method: "delete" %></li>
+            <% else %>
 			<section id="login">
 		   			 <li><a href="#" onClick="openbox('login')"> LOGIN </a></li>
 			   	   	 <li><p> or </p></li>  
 		   	   	   	 <li><a href="#" onClick="openbox('signup')"> SIGN UP </a></li>
 			</section>
+            <% end %>
 		</nav>	
 </header>

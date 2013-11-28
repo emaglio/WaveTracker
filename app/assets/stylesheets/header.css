@@ -64,6 +64,11 @@ header {
            margin-left:0px;
            position:relative;       
     }
+
+    #signout {
+            margin-left:120px;
+            text-decoration:underline;
+    }
     
     header nav a:hover{
 			background: #EFB04F;

@@ -1,3 +1,5 @@
+<% @user = User.last %>
+
 <%= form_for @form do |f| %>
 		<%= f.label :name %>
 		<%= f.text_field :myname%> <br />
@@ -9,7 +11,6 @@
  		<%= f.text_field :location%> <br />
 		<%= f.label :Gender%>
  		<%= f.select :gender, ["Male", "Female", "I don't know yet"]%> <br />
-		<%= puts @form.user.email %>
 
 		<h2>Insert Surfer details</h2>
 		<%= f.label :"Nick Name" %>

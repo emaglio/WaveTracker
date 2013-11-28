@@ -1,5 +1,6 @@
+<% @form = Forms::UserForm.new(user: User.last, surfer: Surfer.last) %>
+
 <h1>User details editing</h1>
-	
     <% if @form.errors.any? %>
         <%= render 'formwitherror' %>
     <% else %>

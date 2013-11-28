@@ -1,7 +1,7 @@
 <%= stylesheet_link_tag "signup" %>
 <%= javascript_include_tag "lightbox-form" %>
-<% @form=Forms::UserForm.new(user: User.new, surfer: Surfer.new) %>
-<%= form_for (@form) do |f| %>
+<% @form = Forms::UserForm.new(user: User.new, surfer: Surfer.new) %>
+<%= form_for @form do |f| %>
 
 <div id="shadowing_signup"></div>
     
@@ -13,7 +13,7 @@
 	     <li id="password"><%= f.password_field :password, :placeholder=>"Password" %></li>
 	     <li id="password_confirm"><%= f.password_field :password_confirm, :placeholder=>"Password Confirm" %></li>
 	     <li id="agree"><%= f.check_box :agree %> <a href="#">I agree with the term of service</a></li>
-	     <li><%= f.submit "Create my account", :class=>'submit_signup' %></li>
+	     <li><%= f.submit "Create my account", :class=>'submit_signup', method: "put" %></li>
 	     <li id="fb">
  	        <span id="fb_image"><img src="/images/icons/facebook.png"></span>
 	        <span id="fb_text"><a href="#">Sign in with Facebook </a> </span>

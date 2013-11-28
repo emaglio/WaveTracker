@@ -7,17 +7,19 @@ module Workflows
 			@params = params
 		end
 		
-		def process
+		def processCreate
 			if form.validate(params)
 				form.save do |data, map|
-					if form.user.new_record?
-						user = ::Service::ManageUser.new(map[:user], map[:surfer]).create
-					else
-						user = ::Service::ManageUser.new(map[:user], map[:surfer]).update(form.user.id, form.surfer.id)
-					end
-					
+					user = ::Service::ManageUser.new(map[:user], map[:surfer]).create
 					yield user if block_given?
 				end
+			end
+		end
+
+		def processUpdate (form)
+			form do |data, map|
+				user = ::Service::ManageUser.new(map[:user], map[:surfer]).update(form.user.id, form.surfer.id)
+				yield user if block_given?
 			end
 		end
 		

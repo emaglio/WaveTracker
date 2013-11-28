@@ -1,9 +1,9 @@
 class UsersController < ApplicationController
   respond_to :js, :html
-  before_action :create_new_form, only: [:new, :create]
-  before_action :create_edit_form, only: [:edit, :update]
+  # before_action :create_new_form, only: [:new, :create]
+  # before_action :create_edit_form, only: [:edit, :update]
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-
+  
   # GET /users
   # GET /users.json
   def index
@@ -26,19 +26,24 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.json
 	def create
+		@form = Forms::UserForm.new(user: User.new, surfer: Surfer.new)
 		workflow = Workflows::UserWorkflow.new(@form, params[:user])
-		workflow.process
-		render :edit
+		workflow.processCreate do |user|
+			redirect_to edit_user_path(user)
+			# create_remember_token
+		end
+		render :new
 	end
 
   # PATCH/PUT /users/1
   # PATCH/PUT /users/1.json
 	def update
+		@user = User.find(params[:id])
+		@form = Forms::UserForm.new(user: @user, surfer: @user.surfer)
 		workflow = Workflows::UserWorkflow.new(@form, params[:user])
-		workflow.process do |user|
+		workflow.processUpdate @form do |user|
 			return respond_with user
 		end
-		render :edit
 	end
 
 	# DELETE /users/1
@@ -47,9 +52,21 @@ class UsersController < ApplicationController
 		@user.delete
 	end
 	
-	def user_to_form
-		@form.user=@user
+	# Used to remember the data in login
+	def User.new_remember_token
+		SecureRandom.urlsafe_base64
 	end
+		
+	def User.encrypt(token)
+		Digest::SHA1.hexdigest(token.to_s)
+	end
+		
+	def create_remember_token
+		@user = User.last
+		@user.remember_token = User.encrypt(User.new_remember_token)
+		@user.save
+	end
+	# end
 	
 	private
 	def user

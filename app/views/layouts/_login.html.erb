@@ -10,7 +10,7 @@
 	     <li id="close" onClick="closebox('login')"> <a href="#"> x </a> </li>
 	     <li id="email_login"><%= f.text_field :email, :placeholder=>"Email" %></li></li>
 	     <li id="password"><%= f.password_field :password, :placeholder=>"Password" %></li>
-	     <li id="remember"><input type="checkbox">Remember me</li>
+         <li id="remember"><%= f.check_box :remember %> <a href="#">Remember me</a></li>
 	     <li id="forgot"><a href="#"> Forgot password </a> </li>
 	     <p id="confirm_login">
 	     <li><%= f.submit "Login", :class=>'submit_login' %></li>	 

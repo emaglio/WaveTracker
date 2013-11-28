@@ -1,9 +1,9 @@
 module Forms
 	class UserForm < Reform::Form
 		include DSL
-		include Reform::Form::ActiveModel
+		include Reform::Form::ActiveRecord
 		
-		properties [:myname, :location, :surname, :gender, :birth_date, :email, :password, :password_confirm, :agree], on: :user
+		properties [:myname, :location, :surname, :gender, :birth_date, :email, :password, :password_confirm, :agree, :remember], on: :user
 		properties [:nickname, :home_spot, :goofy_regular, :style, :best_trick], 			on: :surfer
   
 		VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
@@ -18,7 +18,7 @@ module Forms
 													message: "must have at least: one number between 0 and 9; one Upper Case letter; one Lower Case letter"}
 		validate :passwords_match
 		validates :agree, :acceptance => {:accept => '1'}
-		validates :myname, :surname, :birth_date, :location, :gender, :home_spot, :goofy_regular, :style, :best_trick, :nickname, :presence => false
+		validates :myname, :surname, :birth_date, :location, :gender, :home_spot, :goofy_regular, :style, :best_trick, :nickname, :remember, :presence => false
 		# validates_uniqueness_of :nickname
 		
 		model :user
