@@ -1,11 +1,14 @@
 require 'spec_helper'
 
 describe "Welcomes" do
-  describe "GET /welcomes" do
-    it "works! (now write some real specs)" do
-      # Run the generator again with the --webrat flag if you want to use webrat methods/matchers
-      get welcomes_path
-      expect(response.status).to be(200)
-    end
+
+  	subject { page }
+
+  	describe "Home page" do
+  	visit root_path
+
+  	it { should have_content('Home')}
+
+  	
   end
 end

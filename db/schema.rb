@@ -45,7 +45,7 @@ ActiveRecord::Schema.define(version: 20131128025651) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "password_confirm"
-    t.integer  "agree"
+    t.boolean  "agree"
     t.string   "remember_token"
     t.integer  "remember"
   end

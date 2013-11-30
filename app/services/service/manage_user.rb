@@ -28,6 +28,14 @@ module Service
 			end
 		end
 		
+		def destroy(user_id, surfer_id)
+			ActiveRecord::Base.transaction do
+				user = User.find(user_id)
+				surfer = Surfer.find(surfer_id)
+				user.delete!
+				surfer.delete!
+			end
+		end
 
 	end
 end

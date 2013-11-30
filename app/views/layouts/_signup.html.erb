@@ -1,7 +1,6 @@
 <%= stylesheet_link_tag "signup" %>
 <%= javascript_include_tag "lightbox-form" %>
-<% @form = Forms::UserForm.new(user: User.new, surfer: Surfer.new) %>
-<%= form_for @form do |f| %>
+<%= form_for(:signup, url: signups_path) do |f| %>
 
 <div id="shadowing_signup"></div>
     
