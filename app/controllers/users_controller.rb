@@ -26,6 +26,7 @@ class UsersController < ApplicationController
   # POST /users.json
 	def create
 		@user = User.find(params[:id])
+		raise @user.email
 		@form =  Forms::UserForm.new(user: @user, surfer: Surfer.new)
 		workflow = Workflows::UserWorkflow.new(@form, params[:user])
 		workflow.processCreate do |user|
