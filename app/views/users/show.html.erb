@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 <h2><%= @user.myname%> details</h2>
-
+<% @surfer = Surfer.find_by(user_id: @user.id)%>
 <table>
   <thead>
     <tr>
@@ -10,6 +10,8 @@
 	  <th>Location</th>
 	  <th>Gender</th>
       <th>Email</th>
+      <th>Surfer Nickname</th>
+      <th>Surfer Stand</th>
     </tr>
   </thead>
 
@@ -21,6 +23,8 @@
 		<td><%= @user.location%></td>
 		<td><%= @user.gender%></td>
 		<td><%= @user.email%></td>
+		<td><%= @surfer.nickname%></td>
+		<td><%= @surfer.goofy_regular%></td>		
       </tr>
   </tbody>
 </table>

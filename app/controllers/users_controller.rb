@@ -12,6 +12,8 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+  	@user = User.find(params[:id])
+	@surfer = Surfer.find_by(user_id: @user.id)
   end
 
   # GET /users/new
@@ -20,13 +22,19 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
+  	@user = User.find(params[:id])
+	@surfer = Surfer.find_by(user_id: @user.id)
   end
 
   # POST /users 
   # POST /users.json
 	def create
-		@user = User.find(params[:id])
-		raise @user.email
+		@user = User.new
+		@user.email = params[:signup][:email]
+		@user.password = params[:signup][:password]
+		@user.password_confirm = params[:signup][:password_confirm]
+		@user.agree = params[:signup][:agree]
+  		
 		@form =  Forms::UserForm.new(user: @user, surfer: Surfer.new)
 		workflow = Workflows::UserWorkflow.new(@form, params[:user])
 		workflow.processCreate do |user|
@@ -35,7 +43,6 @@ class UsersController < ApplicationController
 		end
 
 		render :new
-
 	end
 
   # PATCH/PUT /users/1
@@ -44,17 +51,28 @@ class UsersController < ApplicationController
 		@user = User.find(params[:id])
 		@surfer = Surfer.find_by(user_id: @user.id)
 		@form =  Forms::UserForm.new(user: @user, surfer: @surfer)
-		workflow = Workflows::UserWorkflow.new(@form, params[:user])
-		workflow.processUpdate @form do |user|
-			return respond_with user
+
+		ActiveRecord::Base.transaction do
+				@form.save do |data, map|
+					@user.update!(user_params)
+					@surfer.update!(map[:surfer])
+					yield user if block_given?
+				end
 		end
-		render :edit
+
+		#workflow = Workflows::UserWorkflow.new(@form, params[:user])
+		#workflow.processUpdate do |user|
+		#	return respond_with user
+		#end
+
+		render :show
 	end
 
 	# DELETE /users/1
 	# DELETE /users/1.json
 	def destroy
-		@surfer= @user.surfer
+		@user = User.find(params[:id])
+		@surfer = Surfer.find_by(user_id: @user.id)
 		service = ::Service::ManageUser.new(map[:user], map[:surfer])
 		service.destroy(@user.id, @surfer.id)
 		redirect_to welcomes_path
@@ -82,6 +100,10 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:myname, :surname, :birth_date, :location, :gender, :email, :password)
+      params.require(:user).permit(:myname, :location, :surname, :gender, :birth_date, :email, :password, :password_confirm, :agree, :remember)
     end
+
+    #def surfer_params
+     # params.require(:surfer).permit(:nickname, :home_spot, :goofy_regular, :style, :best_trick)
+    #end
 end

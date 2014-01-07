@@ -1,6 +1,7 @@
 class SignupsController < ApplicationController
 
 	def new
+
 	end
 
 	def create
@@ -9,9 +10,10 @@ class SignupsController < ApplicationController
 		@user.email = params[:signup][:email]
 		@user.password = params[:signup][:password]
 		@user.password_confirm = params[:signup][:password_confirm]
-		@user.agree = params[:signup][:agree]	
+		@user.agree = params[:signup][:agree]
 
-		redirect_to :controller => "users", :method =>"create", :id => @user_id
+
+		redirect_to :controller => "users", :action =>"create", :method =>"post", :id => @user.id, :user => params[:signup]
 	end
 
 	def destroy

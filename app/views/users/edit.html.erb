@@ -1,4 +1,4 @@
-<% @form = Forms::UserForm.new(user: User.last, surfer: Surfer.last) %>
+<% @form = Forms::UserForm.new(user: @user, surfer: @surfer) %>
 
 <h1>User details editing</h1>
     <% if @form.errors.any? %>

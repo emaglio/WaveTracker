@@ -1,5 +1,3 @@
-<% @user = User.last %>
-
 <%= form_for @form do |f| %>
 		<%= f.label :name %>
 		<%= f.text_field :myname%> <br />
@@ -29,16 +27,15 @@
 		<h2><%= pluralize(@form.errors.count, "error") %> prohibited this user from being saved:</h2>
 
 		<ul>
-		<% @form.errors.full_messages.each do |msg| %>
-			<li><%= msg %></li>
-		<% end %>
+			<% @form.errors.full_messages.each do |msg| %>
+				<li><%= msg %></li>
+			<% end %>
 		</ul>
 		</div>
 	<% end %>
 
   	<div class="actions">
-	<%= f.submit "Save User"%>
+		<%= f.submit "Save User"%>
 	</div>
-	
-	
+
 <% end %>

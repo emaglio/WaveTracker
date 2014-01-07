@@ -16,10 +16,16 @@ module Workflows
 			end
 		end
 
-		def processUpdate (form)
-			form.save do |data, map|
-				user = ::Service::ManageUser.new(map[:user], map[:surfer]).update(form.user.id, form.surfer.id)
-				yield user if block_given?
+		def processUpdate
+			ActiveRecord::Base.transaction do
+				form.save do |data, map|
+					user = User.find(form.user.id)
+					surfer = Surfer.find(form.surfer.id)
+					user.update!(map[:user])
+					surfer.update!(map[:surfer])
+					yield user if block_given?
+				end
+			user
 			end
 		end
 		
