@@ -34,7 +34,7 @@ class UsersController < ApplicationController
 		@user.password = params[:signup][:password]
 		@user.password_confirm = params[:signup][:password_confirm]
 		@user.agree = params[:signup][:agree]
-  		
+		raise params.inspection
 		@form =  Forms::UserForm.new(user: @user, surfer: Surfer.new)
 		workflow = Workflows::UserWorkflow.new(@form, params[:user])
 		workflow.processCreate do |user|
@@ -51,14 +51,7 @@ class UsersController < ApplicationController
 		@user = User.find(params[:id])
 		@surfer = Surfer.find_by(user_id: @user.id)
 		@form =  Forms::UserForm.new(user: @user, surfer: @surfer)
-
-		ActiveRecord::Base.transaction do
-				@form.save do |data, map|
-					@user.update!(user_params)
-					@surfer.update!(map[:surfer])
-					yield user if block_given?
-				end
-		end
+		@form.save
 
 		#workflow = Workflows::UserWorkflow.new(@form, params[:user])
 		#workflow.processUpdate do |user|

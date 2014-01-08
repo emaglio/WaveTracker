@@ -23,6 +23,12 @@ module Forms
 		validate :check_email
 
 		model :user, on: :user
+
+		def save
+			super
+			surfer.user.save
+		end
+
 		
 		private	
 		def passwords_match
