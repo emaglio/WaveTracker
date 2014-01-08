@@ -26,7 +26,7 @@ module Forms
 
 		def save
 			super
-			surfer.user.save
+			user.surfer.save
 		end
 
 		

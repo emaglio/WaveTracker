@@ -34,7 +34,7 @@ class UsersController < ApplicationController
 		@user.password = params[:signup][:password]
 		@user.password_confirm = params[:signup][:password_confirm]
 		@user.agree = params[:signup][:agree]
-		raise params.inspection
+
 		@form =  Forms::UserForm.new(user: @user, surfer: Surfer.new)
 		workflow = Workflows::UserWorkflow.new(@form, params[:user])
 		workflow.processCreate do |user|

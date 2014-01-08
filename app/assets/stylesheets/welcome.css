@@ -2,9 +2,7 @@
 ----Primary---------
 *******************/
 body { 
-     background-image: url('../images/bd.jpg');
-     background-repeat:no-repeat;
-     background-position:top;
+     background: url('../images/bd.jpg') no-repeat center top 104px;
      overflow:scroll;
 }
      
@@ -167,48 +165,4 @@ body {
         -moz-box-shadow: 10px 10px 10px #373737;
         box-shadow: 10px 10px 10px #373737;
         
-        }
-/*******************
-----Footers---------
-*******************/
-#footer{
-margin-top:40px;
-height:360px;
-width:1460px;
-background:#373737;
-overflow:hidden;
-}
-        
-        
-        #footer h2{
-        color:white;
-        font-size:33px;
-        font-family:'Myriad Pro';
-        margin-bottom:0px;
-        margin-top:35px;
-        }
-        
-        #footer h3{
-        color:white;
-        font-size:12px;
-        font-family:'Open Sans';
-        font-style:italic;
-        }
-        
-        #footer p{
-        color:white;
-        font-size:12px;
-        font-family:'Open Sans';
-        }
-        
-        #facebook{
-        color:white;
-        margin-top:5px;
-        font-size:12px;
-        font-family:'Open Sans';
-        }
-        
-        #facebook li{
-        font-size:10px;
-        font-family:'Open Sans';
         }

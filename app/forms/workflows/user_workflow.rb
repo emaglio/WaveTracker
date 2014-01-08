@@ -8,7 +8,7 @@ module Workflows
 		end
 		
 		def processCreate
-			if true || form.validate(params)
+			if form.validate(params)
 				form.save do |data, map|
 					user = ::Service::ManageUser.new(map[:user], map[:surfer]).create
 					yield user if block_given?
