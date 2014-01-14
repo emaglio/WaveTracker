@@ -8,7 +8,9 @@
 		<%= f.label :"Location(City, State)"%>
  		<%= f.text_field :location%> <br />
 		<%= f.label :Gender%>
- 		<%= f.select :gender, ["Male", "Female", "I don't know yet"]%> <br />
+ 		<%= f.select :gender, ["Male", "Female", "I don't know yet"]%>
+ 		<%= #f.label :"Profile Picture"%>
+ 		<%= #f.file_field :avatar %> <br />
 
 		<h2>Insert Surfer details</h2>
 		<%= f.label :"Nick Name" %>

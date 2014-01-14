@@ -2,9 +2,12 @@ module Forms
 	class UserForm < Reform::Form
 		include DSL
 		include Reform::Form::ActiveModel
+		include Paperclip::Glue
 		
 		properties [:myname, :location, :surname, :gender, :birth_date, :email, :password, :password_confirm, :agree, :remember], on: :user
 		properties [:nickname, :home_spot, :goofy_regular, :style, :best_trick], 			on: :surfer
+
+		#has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/images/:style/missing.png"
   
 		VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 		VALID_PASSWORD_REGEX = /(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])/

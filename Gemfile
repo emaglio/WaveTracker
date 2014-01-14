@@ -51,3 +51,6 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+#Use if for profile picture uploading (https://github.com/thoughtbot/paperclip)
+gem "paperclip", "~> 3.0"
