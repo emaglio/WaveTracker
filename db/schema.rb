@@ -11,57 +11,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140113073649) do
+ActiveRecord::Schema.define(version: 20160518100306) do
 
-  create_table "boards", force: true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "spots", force: true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "surfers", force: true do |t|
+  create_table "surfers", force: :cascade do |t|
     t.string   "nickname"
     t.string   "home_spot"
-    t.string   "goofy_regular"
+    t.string   "stand"
     t.string   "style"
     t.string   "best_trick"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "user_id"
   end
 
-  create_table "users", force: true do |t|
-    t.string   "myname"
+  create_table "users", force: :cascade do |t|
+    t.string   "name"
     t.string   "surname"
     t.string   "birth_date"
     t.string   "location"
     t.string   "gender"
     t.string   "email"
     t.string   "password"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "password_confirm"
-    t.boolean  "agree"
-    t.string   "remember_token"
-    t.integer  "remember"
-    t.string   "avatar_file_name"
-    t.string   "avatar_content_type"
-    t.integer  "avatar_file_size"
-    t.datetime "avatar_updated_at"
-  end
-
-  add_index "users", ["remember_token"], name: "index_users_on_remember_token"
-
-  create_table "welcomes", force: true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "wetsuites", force: true do |t|
+    t.string   "confirm_password"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

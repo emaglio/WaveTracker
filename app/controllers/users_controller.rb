@@ -1,4 +1,4 @@
-class UsersController < ApplicationController
+  class UsersController < ApplicationController
   respond_to :js, :html
   before_action :set_user, only: [:show, :edit, :update, :destroy, :create_remember_toke]
   

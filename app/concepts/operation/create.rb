@@ -7,14 +7,14 @@ class User < ActiveRecord::Base
     model User, :create
 
     contract do
-      properties :myname,
-      properties :location,
+      properties :name,
       properties :surname,
-      properties :gender,
       properties :birth_date,
+      properties :gender,
+      properties :location,
       properties :email,
       properties :password,
-      properties :password_confirm,
+      properties :confirm_password,
       properties :agree,
       properties :remember  
     end
@@ -26,7 +26,7 @@ class User < ActiveRecord::Base
     validates :email, :presence => true,
               format: {with: VALID_EMAIL_REGEX}
     
-    validates :password,  :password_confirm,  presence: true,
+    validates :password,  :confirm_password,  presence: true,
                           length: {in: 5..20, too_short: "must have at least 5 words",
                               too_long: "must have at most 20 words"},
                           format: {with: VALID_PASSWORD_REGEX, 
